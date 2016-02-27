@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+    <default>
+        <reference name="head">
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>css/bootstrap.min.css</name>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>css/font-awesome.min.css</name>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>css/fancybox/source/jquery.fancybox.css</name>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>css/components.css</name>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>css/style-responsive.css</name>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>css/styles.css</name>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>css/red.css</name>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>css/custom.css</name>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>css/style.css</name>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>css/components.css</name>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>css/navstylechange.css</name>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>css/noneed.css</name>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>css/settings.css</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/jquery-1.11.0.min.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/jquery.themepunch.plugins.min.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/jquery.themepunch.revolution.min.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/jquery.easing.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/jquery.parallax.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/jquery.scrollTo.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/jquery.nav.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/layout.js</name>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="vaf/search" name="vaf_search" template="vaf/search.phtml" before="" />
+        </reference>
+        <reference name="footer">
+            <block type="cms/block" name="footer_social_links">
+                <action method="setBlockId">
+                    <block_id>footer_social_links</block_id>
+                </action>
+                <action method="setTitle">
+                    <title>Social</title>
+                </action>
+            </block>
+        </reference>
+
+    </default>
+</layout>

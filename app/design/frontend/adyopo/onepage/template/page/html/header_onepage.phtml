@@ -3,8 +3,9 @@
         <div class="row">
             <div class="col-md-2 col-sm-2">
                 <a class="logo" href="<?php echo $this->getUrl('') ?>">
-                    <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="large" />
-                    <img src="<?php echo $this->getLogoSrcSmall() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="small" />
+                    <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="large"/>
+                    <img src="<?php echo $this->getLogoSrcSmall() ?>" alt="<?php echo $this->getLogoAlt() ?>"
+                         class="small"/>
                 </a>
             </div>
             <div class="col-md-10 pull-right">
@@ -27,7 +28,8 @@
                     </a> -->
 
                     <div class="account-cart-wrapper">
-                        <a href="<?php echo $this->helper('customer')->getAccountUrl(); ?>" data-target-element="#header-account" class="skip-link skip-account">
+                        <a href="<?php echo $this->helper('customer')->getAccountUrl(); ?>"
+                           data-target-element="#header-account" class="skip-link skip-account">
                             <span class="icon"></span>
                             <span class="label"><?php echo $this->__('Account'); ?></span>
                         </a>
@@ -50,24 +52,25 @@
 
                 <!-- Search -->
 
-                <div id="header-search" class="skip-content col-md-6">
-                    <?php echo $this->getChildHtml('topSearch') ?>
-                </div>
+<!--                <div id="header-search" class="skip-content col-md-6">-->
+<!--                    --><?php //echo $this->getChildHtml('topSearch') ?>
+<!--                </div>-->
 
                 <!-- Account -->
-<!--
+                <!--
                 <div id="header-account" class="skip-content">
                     <?php # echo $this->getChildHtml('topLinks') ?>
                 </div>
 -->
-		<ul class="header-navigation">
-		    <li class="current"><a href="#promo-block">Home</a></li>
-		    <li><a href="#about">About</a></li>
-		    <li><a href="#services">Services</a></li>
-            <li><a href="#benefits">Benefits</a></li>
-		    <li><a href="#team">Team</a></li>
-		    <li><a href="#contact">Contact</a></li>
-		</ul>
+                <ul class="header-navigation">
+                    <li class="current">
+                        <a href="#promo-block">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#benefits">Benefits</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
             </div>
         </div>
     </div>

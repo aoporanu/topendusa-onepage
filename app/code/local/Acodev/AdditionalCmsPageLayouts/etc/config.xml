@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config>
+    <global>
+        <page>
+            <layouts>
+                <onepage>
+                    <label>Onepage parallax layout</label>
+                    <template>page/onepage.phtml</template>
+                </onepage>
+            </layouts>
+        </page>
+    </global>
+</config>

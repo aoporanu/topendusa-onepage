@@ -1942,3 +1942,8 @@ a.logo {
     display: inline-block;
     text-align: left;
 }
+
+.col-centered {
+    float: none !important;
+    margin: 0 auto !important;
+}

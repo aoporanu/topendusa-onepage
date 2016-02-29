@@ -40,9 +40,7 @@
                     <?php echo $this->getChildHtml('topMenu') ?>
                 </div>
                 <ul class="header-navigation">
-                    <li class="current">
-
-                        <a href="#promo-block">Home</a></li>
+                    <li class="current"><a href="#promo-block">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#benefits">Benefits</a></li>
@@ -57,7 +55,7 @@
 
 <?php echo $this->getChildHtml('topContainer'); ?>
 <div class="clearfix"></div>
-<?php if(Mage::getSingleton('cms/page')->getIdentifier() == 'home' && Mage::app()->getFrontController()->getRequest()->getRouteName() == 'cms') {
+<?php if (Mage::getSingleton('cms/page')->getIdentifier() == 'home' && Mage::app()->getFrontController()->getRequest()->getRouteName() == 'cms') {
     echo $this->getLayout()->createBlock('cms/block')->setBlockId('revo_slider')->toHtml();
     echo $this->getLayout()->createBlock('cms/block')->setBlockId('metronic_inspires')->toHtml();
     echo $this->getLayout()->createBlock('cms/block')->setBlockId('topendusa_services')->toHtml();

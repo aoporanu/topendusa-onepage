@@ -35,11 +35,11 @@ class Mage_Page_Block_Html_Header extends Mage_Core_Block_Template
 {
     public function _construct()
     {
-        if(Mage::getSingleton('cms/page')->getIdentifier() == 'home' && Mage::app()->getFrontController()->getRequest()->getRouteName() == 'cms') {
+//        if(Mage::getSingleton('cms/page')->getIdentifier() == 'home' && Mage::app()->getFrontController()->getRequest()->getRouteName() == 'cms') {
             $this->setTemplate('page/html/header_onepage.phtml');
-        } else {
-            $this->setTemplate('page/html/header.phtml');
-        }
+//        } else {
+//            $this->setTemplate('page/html/header.phtml');
+//        }
     }
 
     /**

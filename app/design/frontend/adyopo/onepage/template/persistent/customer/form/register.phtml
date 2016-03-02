@@ -49,11 +49,11 @@
                             <input type="hidden" name="error_url" value="<?php echo $this->getErrorUrl() ?>" />
                             <input type="hidden" name="form_key" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" />
                             <p class="form-instructions"><?php echo $this->__('Please enter the following information to create your account.') ?></p>
-                            <p class="required col-lg-4 control-label"><?php echo $this->__('* Required Fields') ?></p>
+                            <p class="required"><?php echo $this->__('* Required Fields') ?></p>
 
-                                <div class="form-group">
+<!--                                <div class="form-group">-->
                                     <?php echo $this->getLayout()->createBlock('customer/widget_name')->setObject($this->getFormData())->setForceUseCustomerAttributes(true)->toHtml() ?>
-                                </div>
+<!--                                </div>-->
                                 <div class="form-group">
                                     <label for="email_address" class="required col-lg-4 control-label"><em>*</em><?php echo $this->__('Email Address') ?></label>
                                     <div class="col-lg-8">

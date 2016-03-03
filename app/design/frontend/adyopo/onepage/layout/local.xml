@@ -86,6 +86,10 @@
                 <type>skin_js</type>
                 <name>js/layout.js</name>
             </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/noconflict.js</name>
+            </action>
         </reference>
         <reference name="content">
             <block type="vaf/search" name="vaf_search" template="vaf/search.phtml" before="" />

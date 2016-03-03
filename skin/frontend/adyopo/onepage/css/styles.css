@@ -1947,3 +1947,18 @@ a.logo {
     float: none !important;
     margin: 0 auto !important;
 }
+
+.my-account h1,
+.my-account h2,
+.my-account h3,
+.my-account h4,
+.my-account h5,
+.my-account h6 {
+    font-family: "PT Sans Narrow", sans-serif;
+    margin: 0 0 10px;
+    text-transform: uppercase;
+}
+
+.my-account h1 {
+    font-size: 23px;
+}

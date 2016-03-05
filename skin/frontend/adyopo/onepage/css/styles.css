@@ -2069,3 +2069,8 @@ a.logo {
     float: right;
     padding: 3px 6px;
 }
+
+div.view-mode.float-right {
+    line-height: 80px;
+    margin-left: 30px;
+}

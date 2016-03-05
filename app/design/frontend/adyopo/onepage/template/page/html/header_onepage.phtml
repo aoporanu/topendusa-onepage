@@ -56,6 +56,13 @@
 <?php echo $this->getChildHtml('topContainer'); ?>
 <div class="clearfix"></div>
 <?php if (Mage::getSingleton('cms/page')->getIdentifier() == 'home' && Mage::app()->getFrontController()->getRequest()->getRouteName() == 'cms') {
+//    $block = $this->getLayout()->createBlock('vaf/search');
+//    echo '<pre>';
+//    var_dump($block);
+//    echo '</pre>';
+//    $block->setTemplate('vf/vaf/search.phtml');
+
+//    echo $block->renderView();
     echo $this->getLayout()->createBlock('cms/block')->setBlockId('revo_slider')->toHtml();
     echo $this->getLayout()->createBlock('cms/block')->setBlockId('metronic_inspires')->toHtml();
     echo $this->getLayout()->createBlock('cms/block')->setBlockId('topendusa_services')->toHtml();

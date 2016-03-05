@@ -84,6 +84,14 @@
             </action>
             <action method="addItem">
                 <type>skin_js</type>
+                <name>js/fancybox/source/jquery.fancybox.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/zoom/jquery.zoom.min.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
                 <name>js/layout.js</name>
             </action>
             <action method="addItem">

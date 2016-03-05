@@ -1962,3 +1962,110 @@ a.logo {
 .my-account h1 {
     font-size: 23px;
 }
+
+.category-products .pull-right {
+    margin-left: 70px;
+}
+
+.category-products .label {
+    color: #8e9ca8;
+    float: left;
+    font-family: "PT Sans Narrow",sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    margin-right: 10px;
+    position: relative;
+    text-transform: uppercase;
+    top: 2px;
+}
+
+.product-item h3 {
+    font: 300 14px "Open Sans",sans-serif;
+    padding-bottom: 4px;
+    padding-top: 10px;
+}
+.category-products h1, .category-products h2, .category-products h3, .category-products h4, .category-products h5, .category-products h6 {
+    font-family: "PT Sans Narrow",sans-serif;
+    margin: 0 0 10px;
+    text-transform: uppercase;
+}
+
+.catalog-category-view {
+    background: #f9f9f9 none repeat scroll 0 0;
+}
+
+.product-item {
+    margin-bottom: 30px;
+    background: #FFF none repeat scroll 0 0;
+    padding: 12px 12px 16px;
+    position: relative;
+}
+
+.product-item:hover {
+    box-shadow: 5px 5px rgba(234, 234, 234, 0.9);
+}
+
+.product-item .img-responsive {
+    width: 100%;
+}
+
+.nav-catalogue .pi-price,
+.nav-catalogue .product-item .add2cart {
+    float: none;
+}
+
+.pi-img-wrapper {
+    position: relative;
+}
+
+.pi-img-wrapper div {
+    background: rgba(0, 0, 0, 0.3) none repeat scroll 0 0;
+    display: none;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 100%;
+}
+
+.product-item:hover .pi-img-wrapper > div {
+    display: block;
+}
+
+.pi-img-wrapper div .btn-default {
+    background: transparent none repeat scroll 0 0;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 12px;
+    margin: -13px 5px 0;
+    padding: 3px 10px;
+    position: relative;
+    top: 50%;
+}
+
+.product-item .btn:hover {
+    background: #e84d1c none repeat scroll 0 0;
+}
+
+.product-item h3 a {
+    color: #3e4d5c;
+}
+
+.pi-price {
+    color: #e84d1c;
+}
+
+.pi-price {
+    color: #e84d1c;
+    float: left;
+    font: 18px "PT Sans Narrow",sans-serif;
+    padding-top: 1px;
+}
+
+.product-item .add2cart {
+    border: 1px solid #ededed;
+    color: #a8aeb3;
+    float: right;
+    padding: 3px 6px;
+}

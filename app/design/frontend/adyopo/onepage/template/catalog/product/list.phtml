@@ -152,7 +152,7 @@ $_helper = $this->helper('catalog/output');
                                      src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize($_imgSize); ?>"
                                      alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), NULL, TRUE) ?>"/>
                                 <div>
-                                    <a href="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize($_imgSize); ?>"
+                                    <a href="<?php echo $this->helper('catalog/image')->init($_product, 'small_image'); ?>"
                                        class="btn btn-default fancybox-button"><?php echo $this->__('Zoom'); ?></a>
                                     <a href="#product-pop-up"
                                        class="btn btn-default fancybox-fast-view"><?php echo $this->__('View') ?></a>
@@ -190,6 +190,9 @@ $_helper = $this->helper('catalog/output');
                         </div>
                     </div>
                 <?php endforeach; ?>
+            </div>
+            <div class="product-page product-pop-up">
+
             </div>
             <script
                 type="text/javascript">decorateGeneric($$('ul.products-grid'), ['odd', 'even', 'first', 'last'])</script>

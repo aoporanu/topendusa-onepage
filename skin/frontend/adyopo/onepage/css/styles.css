@@ -2074,3 +2074,12 @@ div.view-mode.float-right {
     line-height: 80px;
     margin-left: 30px;
 }
+
+div > .product-item {
+    min-height: 340px;
+}
+
+.product-page h1 {
+    border-bottom: 1px solid #f4f4f4;
+    padding-bottom: 12px;
+}

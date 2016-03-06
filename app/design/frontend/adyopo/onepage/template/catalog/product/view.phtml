@@ -33,34 +33,31 @@
 ?>
 <?php $_helper = $this->helper('catalog/output'); ?>
 <?php $_product = $this->getProduct(); ?>
-<script type="text/javascript">
-    var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);
-</script>
-<div id="messages_product_view"><?php echo $this->getMessagesBlock()->toHtml() ?></div>
-<div class="product-view">
-    <div class="product-essential">
-    <form action="<?php echo $this->getSubmitUrl($_product, array('_secure' => $this->_isSecure())) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
-        <?php echo $this->getBlockHtml('formkey') ?>
-        <div class="no-display">
-            <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
-            <input type="hidden" name="related_product" id="related-products-field" value="" />
+<div class="row">
+    <div class="col-md-6 col-sm-6 col-xs-3">
+        <div class="product-main-image">
+            <?php echo $this->getChildHtml('media') ?>
         </div>
-
-        <div class="product-shop">
-            <div class="product-name">
-                <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
+    </div>
+    <div class="col-md-6 col-sm-6 col-xs-9">
+        <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
+        <div class="price-availability-block clearfix">
+            <div class="price">
+                <strong><span>$</span>47.00</strong>
+                <em>$<span>62.00</span></em>
             </div>
-
-            <?php if ($this->canEmailToFriend()): ?>
-                <p class="email-friend"><a href="<?php echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>"><?php echo $this->__('Email to a Friend') ?></a></p>
-            <?php endif; ?>
-
-            <?php echo $this->getReviewsSummaryHtml($_product, false, true)?>
-            <?php echo $this->getChildHtml('alert_urls') ?>
-            <?php echo $this->getChildHtml('product_type_data') ?>
-            <?php echo $this->getTierPriceHtml() ?>
-            <?php echo $this->getChildHtml('extrahint') ?>
-
+            <div class="availability">
+                <?php echo $this->getChildHtml('product_type_data') ?>
+            </div>
+        </div>
+            <?php if ($_product->getShortDescription()):?>
+                <div class="description">
+                    <h2><?php echo $this->__('Quick Overview') ?></h2>
+                    <?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?>
+                    <?php echo $this->getReviewsSummaryHtml($_product, false, true)?>
+                </div>
+            <?php endif;?>
+        <div class="product-page-cart">
             <?php if (!$this->hasOptions()):?>
                 <div class="add-to-box">
                     <?php if($_product->isSaleable()): ?>
@@ -77,13 +74,40 @@
                     <?php echo $this->getChildHtml('addto') ?>
                 </div>
             <?php endif; ?>
+            <div class="product-quantity">
+                <input id="product-quantity" type="text" value="1" readonly name="product-quantity" class="form-control input-sm">
+            </div>
+        </div>
+    </div>
 
-            <?php if ($_product->getShortDescription()):?>
-                <div class="short-description">
-                    <h2><?php echo $this->__('Quick Overview') ?></h2>
-                    <div class="std"><?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></div>
-                </div>
-            <?php endif;?>
+    <div class="sticker sticker-sale"></div>
+</div>
+<script type="text/javascript">
+    var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);
+</script>
+<div id="messages_product_view"><?php echo $this->getMessagesBlock()->toHtml() ?></div>
+<div class="product-view">
+    <div class="product-essential">
+    <form action="<?php echo $this->getSubmitUrl($_product, array('_secure' => $this->_isSecure())) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
+        <?php echo $this->getBlockHtml('formkey') ?>
+        <div class="no-display">
+            <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
+            <input type="hidden" name="related_product" id="related-products-field" value="" />
+        </div>
+
+        <div class="product-shop">
+            <?php if ($this->canEmailToFriend()): ?>
+                <p class="email-friend"><a href="<?php echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>"><?php echo $this->__('Email to a Friend') ?></a></p>
+            <?php endif; ?>
+
+
+            <?php echo $this->getChildHtml('alert_urls') ?>
+            <?php echo $this->getTierPriceHtml() ?>
+            <?php echo $this->getChildHtml('extrahint') ?>
+
+
+
+
 
             <?php echo $this->getChildHtml('other');?>
 
@@ -91,10 +115,6 @@
                 <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
             <?php endif;?>
 
-        </div>
-
-        <div class="product-img-box">
-            <?php echo $this->getChildHtml('media') ?>
         </div>
 
         <div class="clearer"></div>

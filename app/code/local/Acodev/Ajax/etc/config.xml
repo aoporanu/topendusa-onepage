@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <config>
     <modules>
-        <Czettner_Ajax>
+        <Acodev_Ajax>
             <version>1.0</version>
-        </Czettner_Ajax>
+        </Acodev_Ajax>
     </modules>
 
     <global>

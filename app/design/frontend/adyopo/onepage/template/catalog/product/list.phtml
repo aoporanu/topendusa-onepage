@@ -154,7 +154,7 @@ $_helper = $this->helper('catalog/output');
                                 <div>
                                     <a href="<?php echo $this->helper('catalog/image')->init($_product, 'small_image'); ?>"
                                        class="btn btn-default fancybox-button"><?php echo $this->__('Zoom'); ?></a>
-                                    <a href="#product-pop-up"
+                                    <a href="<?php echo $_product->getProductUrl() ?>#product-box"
                                        class="btn btn-default fancybox-fast-view"><?php echo $this->__('View') ?></a>
                                 </div>
 

@@ -76,7 +76,7 @@
             </action>
             <action method="addItem">
                 <type>skin_js</type>
-                <name>js/jquery.scrollTo.js</name>
+                <name>js/jquery.scrollTo.min.js</name>
             </action>
             <action method="addItem">
                 <type>skin_js</type>

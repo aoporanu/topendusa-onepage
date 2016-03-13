@@ -33,7 +33,7 @@
 ?>
 <?php $_helper = $this->helper('catalog/output'); ?>
 <?php $_product = $this->getProduct(); ?>
-<div class="row">
+<div class="row" id="product-box">
     <div class="col-md-6 col-sm-6 col-xs-3">
         <div class="product-main-image">
             <?php echo $this->getChildHtml('media') ?>
@@ -50,34 +50,34 @@
                 <?php echo $this->getChildHtml('product_type_data') ?>
             </div>
         </div>
-            <?php if ($_product->getShortDescription()):?>
-                <div class="description">
-                    <h2><?php echo $this->__('Quick Overview') ?></h2>
-                    <?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?>
-                    <?php echo $this->getReviewsSummaryHtml($_product, false, true)?>
-                </div>
-            <?php endif;?>
-        <div class="product-page-cart">
-            <?php if (!$this->hasOptions()):?>
-                <div class="add-to-box">
-                    <?php if($_product->isSaleable()): ?>
-                        <?php echo $this->getChildHtml('addtocart') ?>
-                        <?php if( $this->helper('wishlist')->isAllow() || $_compareUrl=$this->helper('catalog/product_compare')->getAddUrl($_product)): ?>
-                            <span class="or"><?php echo $this->__('OR') ?></span>
-                        <?php endif; ?>
-                    <?php endif; ?>
-                    <?php echo $this->getChildHtml('addto') ?>
-                </div>
-                <?php echo $this->getChildHtml('extra_buttons') ?>
-            <?php elseif (!$_product->isSaleable()): ?>
-                <div class="add-to-box">
-                    <?php echo $this->getChildHtml('addto') ?>
-                </div>
-            <?php endif; ?>
-            <div class="product-quantity">
-                <input id="product-quantity" type="text" value="1" readonly name="product-quantity" class="form-control input-sm">
-            </div>
-        </div>
+<!--            --><?php //if ($_product->getShortDescription()):?>
+<!--                <div class="description">-->
+<!--                    <h2>--><?php //echo $this->__('Quick Overview') ?><!--</h2>-->
+<!--                    --><?php //echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?>
+<!--                    --><?php //echo $this->getReviewsSummaryHtml($_product, false, true)?>
+<!--                </div>-->
+<!--            --><?php //endif;?>
+<!--        <div class="product-page-cart">-->
+<!--            --><?php //if (!$this->hasOptions()):?>
+<!--                <div class="add-to-box">-->
+<!--                    --><?php //if($_product->isSaleable()): ?>
+<!--                        --><?php //echo $this->getChildHtml('addtocart') ?>
+<!--                        --><?php //if( $this->helper('wishlist')->isAllow() || $_compareUrl=$this->helper('catalog/product_compare')->getAddUrl($_product)): ?>
+<!--                            <span class="or">--><?php //echo $this->__('OR') ?><!--</span>-->
+<!--                        --><?php //endif; ?>
+<!--                    --><?php //endif; ?>
+<!--                    --><?php //echo $this->getChildHtml('addto') ?>
+<!--                </div>-->
+<!--                --><?php //echo $this->getChildHtml('extra_buttons') ?>
+<!--            --><?php //elseif (!$_product->isSaleable()): ?>
+<!--                <div class="add-to-box">-->
+<!--                    --><?php //echo $this->getChildHtml('addto') ?>
+<!--                </div>-->
+<!--            --><?php //endif; ?>
+<!--            <div class="product-quantity">-->
+<!--                <input id="product-quantity" type="text" value="1" readonly name="product-quantity" class="form-control input-sm">-->
+<!--            </div>-->
+<!--        </div>-->
     </div>
 
     <div class="sticker sticker-sale"></div>

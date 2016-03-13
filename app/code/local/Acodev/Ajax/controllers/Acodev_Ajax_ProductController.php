@@ -13,6 +13,7 @@ class Acodev_Ajax_ProductController extends Mage_Catalog_ProductController
 {
     public function quickViewAction()
     {
+        die('xxx');
         if(!$this->getRequest()->isXmlHttpRequest()) {
             $this->_redirect('/');
         }

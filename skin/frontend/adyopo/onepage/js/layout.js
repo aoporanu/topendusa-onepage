@@ -33,7 +33,26 @@ var Layout = function () {
             return;
         }
 
-        jQuery(".fancybox-fast-view").fancybox();
+        jQuery(".fancybox-fast-view").on("click", function(e) {
+            e.preventDefault();
+            var url = this.href.split("/");
+            url.splice(3, 0, "index.php");
+            var str = url.join('/');
+            //console.info(url);
+            //console.info(str + "#product-box");
+            //return;
+
+            jQuery('.product-pop-up').load("" + str + "", function() {
+                jQuery.fancybox(this, {
+                    afterLoad: function() {
+                        this.content = jQuery('<div>').html(this.content).find('#product-box').html();
+                    },
+                    afterClose: function() {
+                        jQuery(".product-pop-up").empty();
+                    }
+                })
+            })
+        })
 
         if (jQuery(".fancybox-button").size() > 0) {
             jQuery(".fancybox-button").fancybox({

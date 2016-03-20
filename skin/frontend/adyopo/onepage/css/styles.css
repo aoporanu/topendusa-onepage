@@ -1867,8 +1867,6 @@ Styler Panel
 .large {
     width: 100px;
     vertical-align: baseline;
-    position: absolute;
-    top: 10px;
 }
 
 @media screen and (min-width: 480px) {

@@ -42,16 +42,24 @@ var Layout = function () {
             //console.info(str + "#product-box");
             //return;
 
-            jQuery('.product-pop-up').load("" + str + "", function() {
-                jQuery.fancybox(this, {
-                    afterLoad: function() {
-                        this.content = jQuery('<div>').html(this.content).find('#product-box').html();
-                    },
-                    afterClose: function() {
-                        jQuery(".product-pop-up").empty();
-                    }
-                })
-            })
+            var page = jQuery('<div>').css('visibility', 'hidden').load(str);
+            console.info(page);
+            // jQuery(page).fancybox();
+            jQuery('.product-pop-up').fancybox({
+                type: "html",
+                content: page
+            });
+
+            //jQuery('.product-pop-up').load("" + str + "", function() {
+            //    jQuery.fancybox(this, {
+            //        afterLoad: function() {
+            //            this.content = jQuery('<div>').html(this.content).find('#product-box').html();
+            //        },
+            //        afterClose: function() {
+            //            jQuery(".product-pop-up").empty();
+            //        }
+            //    })
+            //})
         })
 
         if (jQuery(".fancybox-button").size() > 0) {

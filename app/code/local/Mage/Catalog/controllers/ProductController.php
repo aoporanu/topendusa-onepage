@@ -10,8 +10,12 @@ require_once 'Mage/Catalog/controllers/ProductController';
 
 class ProductController extends Mage_Catalog_ProductController
 {
+    /**
+     *
+     */
     public function viewAction()
     {
+        die('xxx');
         // Get initial data from request
         $categoryId = (int) $this->getRequest()->getParam('category', false);
         $productId  = (int) $this->getRequest()->getParam('id');

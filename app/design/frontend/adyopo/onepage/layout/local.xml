@@ -112,6 +112,10 @@
                 </action>
             </block>
         </reference>
+        <reference name="checkout_onepage_index">
+            <reference name="content">
 
+            </reference>
+        </reference>
     </default>
 </layout>

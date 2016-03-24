@@ -113,8 +113,11 @@
             </block>
         </reference>
         <reference name="checkout_onepage_index">
-            <reference name="content">
-
+            <reference name="head">
+                <action method="addItem">
+                    <type>skin_js</type>
+                    <name>js/bootstrap-touchspin/bootstrap.touchspin.js</name>
+                </action>
             </reference>
         </reference>
     </default>

@@ -243,6 +243,15 @@ var Layout = function () {
         });
     }
 
+    var initTouchspin = function () {
+        jQuery(".product-quantity .form-control").TouchSpin({
+            buttondown_class: "btn quantity-down",
+            buttonup_class: "btn quantity-up"
+        });
+        jQuery(".quantity-down").html("<i class='fa fa-angle-down'></i>");
+        jQuery(".quantity-up").html("<i class='fa fa-angle-up'></i>");
+    }
+
     return {
         init: function () {
             //handlePromoBlock();
@@ -261,6 +270,7 @@ var Layout = function () {
             valignCenterPortfolio();
             handleTheme();
             initImageZoom();
+            initTouchspin();
         },
     };
 }();

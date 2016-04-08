@@ -39,6 +39,8 @@
                 <div id="header-nav" class="skip-content">
                     <?php echo $this->getChildHtml('topMenu') ?>
                 </div>
+                <!-- show menu only on first page -->
+                <?php if(Mage::getSingleton('cms/page')->getIdentifier() == 'home') { ?>
                 <ul class="header-navigation">
                     <li class="current"><a href="#promo-block">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -47,6 +49,10 @@
                     <li><a href="#team">Team</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
+                <?php } ?>
+                <div id="header-account" class="skip-content">
+                    <?php echo $this->getChildHtml('topLinks') ?>
+                </div>
             </div>
         </div>
     </div>
@@ -55,18 +61,3 @@
 
 <?php echo $this->getChildHtml('topContainer'); ?>
 <div class="clearfix"></div>
-<?php if (Mage::getSingleton('cms/page')->getIdentifier() == 'home' && Mage::app()->getFrontController()->getRequest()->getRouteName() == 'cms') {
-//    $block = $this->getLayout()->createBlock('vaf/search');
-//    echo '<pre>';
-//    var_dump($block);
-//    echo '</pre>';
-//    $block->setTemplate('vf/vaf/search.phtml');
-
-//    echo $block->renderView();
-    echo $this->getLayout()->createBlock('cms/block')->setBlockId('revo_slider')->toHtml();
-    echo $this->getLayout()->createBlock('cms/block')->setBlockId('metronic_inspires')->toHtml();
-    echo $this->getLayout()->createBlock('cms/block')->setBlockId('topendusa_services')->toHtml();
-    echo $this->getLayout()->createBlock('cms/block')->setBlockId('topendusa_team')->toHtml();
-    echo $this->getLayout()->createBlock('cms/block')->setBlockId('topendusa_facts')->toHtml();
-}
-?>

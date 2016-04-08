@@ -1,5 +1,6 @@
 <script src="/skin/frontend/adyopo/onepage/js/revo.ini.js"></script>
-<div class="footer" <?php if(Mage::getSingleton('cms/page') != 'home') { ?> style="position: fixed; bottom: 0; width: 100%" <?php } ?>>
+<script src="<?php echo $this->getSkinUrl('js/revo.ini.js') ?>"></script>
+<div class="footer" <?php if(Mage::getSingleton('cms/page')->getIdentifier() != 'home') { ?> style="position: fixed; bottom: 0; width: 100%" <?php } ?>>
     <div class="container">
         <div class="row">
             <!-- BEGIN COPYRIGHT -->

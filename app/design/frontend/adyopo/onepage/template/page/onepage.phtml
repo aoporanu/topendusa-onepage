@@ -40,9 +40,6 @@
 
 <head>
 <?php echo $this->getChildHtml('head') ?>
-<!--    <script>-->
-<!--        jQuery.noConflict();-->
-<!--    </script>-->
 </head>
 <body>
 <?php echo $this->getChildHtml('after_body_start') ?>
@@ -52,7 +49,12 @@
                 <div class="col-main">
                     <?php echo $this->getChildHtml('global_messages') ?>
                     <?php echo $this->getChildHtml('content') ?>
-
+                    <?php if(Mage::getSingleton('cms/page')->getIdentifier() == 'home') { ?>
+                    <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('promo_block')->toHtml(); ?>
+                    <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('services_block')->toHtml(); ?>
+                    <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('about_block')->toHtml(); ?>
+                    <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('pre_footer')->toHtml(); ?>
+                    <?php } ?>
                 </div>
         <?php echo $this->getChildHtml('footer_before') ?>
         <?php echo $this->getChildHtml('footer') ?>

@@ -24,26 +24,37 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<div class="page-title">
-    <h1><?php echo $this->__('Checkout') ?></h1>
+<div class="main">
+
+    <div class="container">
+        <div class="row margin-bottom-40">
+            <div class="col-md-12 col-sm-12">
+                <h1><?php echo $this->__('Checkout') ?></h1>
+                <div id="checkout-page" class="panel-group checkout-page accordion scrollable">
+                    <?php $i=0; foreach($this->getSteps() as $_stepId => $_stepInfo): ?>
+                        <?php if (!$this->getChild($_stepId) || !$this->getChild($_stepId)->isShow()): continue; endif; $i++;?>
+                        <div id="<?php echo $_stepId ?>" class="panel panel-default section<?php echo !empty($_stepInfo['allow'])?' allow':'' ?><?php echo !empty($_stepInfo['complete'])?' saved':'' ?>">
+                            <div class="step-title">
+                                <div class="panel-heading">
+                                    <h2 class="panel-title">
+                                        <a href="#checkout-page" data-parent="#checkout-page" class="accordion-toggle">
+                                            <?php echo $_stepInfo['label'] ?>
+                                        </a>
+                                    </h2>
+                                </div>
+                            </div>
+                            <div id="checkout-step-<?php echo $_stepId ?>" class="step a-item panel-collapse <?php if($i == 1) { echo ' in'; } ?>">
+                                <?php echo $this->getChildHtml($_stepId); ?>
+                            </div>
+                        </div>
+                    <?php endforeach ?>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <script type="text/javascript" src="<?php echo $this->getJsUrl('varien/accordion.js') ?>"></script>
 <script type="text/javascript" src="<?php echo $this->getSkinUrl('js/opcheckout.js') ?>"></script>
-<ol class="opc" id="checkoutSteps">
-<?php $i=0; foreach($this->getSteps() as $_stepId => $_stepInfo): ?>
-<?php if (!$this->getChild($_stepId) || !$this->getChild($_stepId)->isShow()): continue; endif; $i++ ?>
-    <li id="opc-<?php echo $_stepId ?>" class="section<?php echo !empty($_stepInfo['allow'])?' allow':'' ?><?php echo !empty($_stepInfo['complete'])?' saved':'' ?>">
-        <div class="step-title">
-            <span class="number"><?php echo $i ?></span>
-            <h2><?php echo $_stepInfo['label'] ?></h2>
-            <a href="#"><?php echo $this->__('Edit') ?></a>
-        </div>
-        <div id="checkout-step-<?php echo $_stepId ?>" class="step a-item" style="display:none;">
-            <?php echo $this->getChildHtml($_stepId) ?>
-        </div>
-    </li>
-<?php endforeach ?>
-</ol>
 <script type="text/javascript">
 //<![CDATA[
     var accordion = new Accordion('checkoutSteps', '.step-title', true);
@@ -57,4 +68,5 @@
         failure: '<?php echo $this->getUrl('checkout/cart') ?>'}
     );
 //]]>
+    jQuery('body').addClass('checkout-onepage-index');
 </script>

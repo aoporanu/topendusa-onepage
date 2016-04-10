@@ -1,7 +1,7 @@
 /* here you can put your own css to customize and override the theme */
 .checkout-cart-index, .checkout-onepage-index  {
 	background: #f9f9f9 none repeat scroll 0 0;
-	font-family: "PT Sans Narrow",sans-serif
+	font-family: "PT Sans Narrow",sans-serif;
 	margin: 0 0 10px;
 	text-transform: uppercase;
 }
@@ -313,14 +313,6 @@
     position: absolute;
     top: 0;
     width: 63px;
-}
-.sticker-sale {
-    background: rgba(0, 0, 0, 0) url("../images/sale.png") no-repeat scroll 0 0;
-}
-.sticker-new {
-    background: rgba(0, 0, 0, 0) url("../images/new.png") no-repeat scroll 0 0;
-    left: auto;
-    right: 0;
 }
 .pi-img-wrapper {
     position: relative;

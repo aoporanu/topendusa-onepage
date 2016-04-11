@@ -38,56 +38,61 @@
             <div class="goods-page">
                 <div class="goods-data clearfix">
                     <div class="table-wrapper-responsive">
-                        <table id="shopping-cart-table" class="data-table cart-table">
-                            <col width="1" />
-                            <col />
-                            <col width="1" />
-                            <?php if ($this->helper('wishlist')->isAllowInCart()) : ?>
+                        <?php echo $this->getMessagesBlock()->toHtml() ?>
+                        <?php echo $this->getChildHtml('form_before') ?>
+                        <form action="<?php echo $this->getFormActionUrl() ?>" method="post">
+                            <?php echo $this->getBlockHtml('formkey'); ?>
+                            <table id="shopping-cart-table" class="data-table cart-table">
                                 <col width="1" />
-                            <?php endif ?>
-                            <?php if ($this->helper('tax')->displayCartPriceExclTax() || $this->helper('tax')->displayCartBothPrices()): ?>
+                                <col />
                                 <col width="1" />
-                            <?php endif; ?>
-                            <?php if ($this->helper('tax')->displayCartPriceInclTax() || $this->helper('tax')->displayCartBothPrices()): ?>
-                                <col width="1" />
-                            <?php endif; ?>
-                            <col width="1" />
-                            <?php if ($this->helper('tax')->displayCartPriceExclTax() || $this->helper('tax')->displayCartBothPrices()): ?>
-                                <col width="1" />
-                            <?php endif; ?>
-                            <?php if ($this->helper('tax')->displayCartPriceInclTax() || $this->helper('tax')->displayCartBothPrices()): ?>
-                                <col width="1" />
-                            <?php endif; ?>
-                            <col width="1" />
-
-                            <?php $mergedCells = ($this->helper('tax')->displayCartBothPrices() ? 2 : 1); ?>
-                            <thead>
-                            <tr>
-                                <th class="goods-page-image"><?php echo $this->__('Image') ?></th>
-                                <th class="goods-page-description"><span class="nobr"><?php echo $this->__('Description') ?></span></th>
                                 <?php if ($this->helper('wishlist')->isAllowInCart()) : ?>
-                                    <th rowspan="<?php echo $mergedCells; ?>" class="a-center"><span class="nobr"><?php echo $this->__('Move to Wishlist') ?></span></th>
+                                    <col width="1" />
                                 <?php endif ?>
-                                <th class="goods-page-configure"><?php echo $this->__('Configure') ?></th>
-                                <th class="goods-page-price"><span class="nobr"><?php echo $this->__('Unit Price') ?></span></th>
-                                <th class="goods-page-quantity"><?php echo $this->__('Qty') ?></th>
-                                <th class="goods-page-total"><?php echo $this->__('Subtotal') ?></th>
-                            </tr>
-                            <?php if ($this->helper('tax')->displayCartBothPrices()): ?>
+                                <?php if ($this->helper('tax')->displayCartPriceExclTax() || $this->helper('tax')->displayCartBothPrices()): ?>
+                                    <col width="1" />
+                                <?php endif; ?>
+                                <?php if ($this->helper('tax')->displayCartPriceInclTax() || $this->helper('tax')->displayCartBothPrices()): ?>
+                                    <col width="1" />
+                                <?php endif; ?>
+                                <col width="1" />
+                                <?php if ($this->helper('tax')->displayCartPriceExclTax() || $this->helper('tax')->displayCartBothPrices()): ?>
+                                    <col width="1" />
+                                <?php endif; ?>
+                                <?php if ($this->helper('tax')->displayCartPriceInclTax() || $this->helper('tax')->displayCartBothPrices()): ?>
+                                    <col width="1" />
+                                <?php endif; ?>
+                                <col width="1" />
+
+                                <?php $mergedCells = ($this->helper('tax')->displayCartBothPrices() ? 2 : 1); ?>
+                                <thead>
                                 <tr>
-                                    <th class="a-right"><?php echo $this->helper('tax')->getIncExcTaxLabel(false) ?></th>
-                                    <th><?php echo $this->helper('tax')->getIncExcTaxLabel(true) ?></th>
-                                    <th class="a-right"><?php echo $this->helper('tax')->getIncExcTaxLabel(false) ?></th>
-                                    <th><?php echo $this->helper('tax')->getIncExcTaxLabel(true) ?></th>
+                                    <th class="goods-page-image"><?php echo $this->__('Image') ?></th>
+                                    <th class="goods-page-description"><span class="nobr"><?php echo $this->__('Description') ?></span></th>
+                                    <?php if ($this->helper('wishlist')->isAllowInCart()) : ?>
+                                        <th rowspan="<?php echo $mergedCells; ?>" class="a-center"><span class="nobr"><?php echo $this->__('Move to Wishlist') ?></span></th>
+                                    <?php endif ?>
+                                    <th class="goods-page-configure"><?php echo $this->__('Configure') ?></th>
+                                    <th class="goods-page-price"><span class="nobr"><?php echo $this->__('Unit Price') ?></span></th>
+                                    <th class="goods-page-quantity"><?php echo $this->__('Qty') ?></th>
+                                    <th class="goods-page-total"><?php echo $this->__('Subtotal') ?></th>
                                 </tr>
-                            <?php endif; ?>
-                            </thead>
-                            <tbody>
-                            <?php foreach($this->getItems() as $_item): ?>
-                                <?php echo $this->getItemHtml($_item) ?>
-                            <?php endforeach ?>
-                            </tbody>
-                        </table>
+                                <?php if ($this->helper('tax')->displayCartBothPrices()): ?>
+                                    <tr>
+                                        <th class="a-right"><?php echo $this->helper('tax')->getIncExcTaxLabel(false) ?></th>
+                                        <th><?php echo $this->helper('tax')->getIncExcTaxLabel(true) ?></th>
+                                        <th class="a-right"><?php echo $this->helper('tax')->getIncExcTaxLabel(false) ?></th>
+                                        <th><?php echo $this->helper('tax')->getIncExcTaxLabel(true) ?></th>
+                                    </tr>
+                                <?php endif; ?>
+                                </thead>
+                                <tbody>
+                                <?php foreach($this->getItems() as $_item): ?>
+                                    <?php echo $this->getItemHtml($_item) ?>
+                                <?php endforeach ?>
+                                </tbody>
+                            </table>
+                        </form>
                     </div>
                         <div class="cart-collaterals pull-left">
                             <div class="col2-set">
@@ -131,14 +136,6 @@
     <div class="page-title title-buttons">
 
     </div>
-    <?php echo $this->getMessagesBlock()->toHtml() ?>
-    <?php echo $this->getChildHtml('form_before') ?>
-    <form action="<?php echo $this->getFormActionUrl() ?>" method="post">
-        <?php echo $this->getBlockHtml('formkey'); ?>
-        <fieldset>
-
-            <script type="text/javascript">decorateTable('shopping-cart-table')</script>
-        </fieldset>
-    </form>
+                <script type="text/javascript">decorateTable('shopping-cart-table')</script>
     
 </div>

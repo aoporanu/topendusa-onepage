@@ -1010,3 +1010,61 @@ table .product-quantity, table .product-quantity .input-group {
 .btn {
     text-transform: uppercase;
 }
+.compare-goods tr:first-child td.compare-info, .compare-goods tr:first-child td.compare-item {
+    background: rgba(0, 0, 0, 0) none no-repeat scroll 0 0;
+    border-bottom: 3px solid #ecebeb;
+}
+.goods-data td.compare-info {
+    background: #f9f9f9 none repeat scroll 0 0;
+    vertical-align: middle;
+    width: 20%;
+}
+.goods-data td.compare-info, .goods-data td.compare-item {
+    padding: 20px;
+}
+.compare-item {
+    text-align: center;
+}
+.compare-item img {
+    max-width: 100px;
+    width: 100%;
+}
+.compare-item h3 {
+    margin: 0;
+    padding: 7px 0 4px;
+}
+.compare-item strong {
+    color: #e84d1c;
+    font-size: 21px;
+    font-weight: normal;
+}
+.compare-item strong span {
+    font-size: 17px;
+}
+.compare-goods .btn-primary {
+    margin-right: 0;
+}
+.goods-data th h2 {
+    font-size: 17px;
+    font-weight: bold;
+    margin: 0;
+    padding: 8px 20px 0;
+}
+.goods-page .compare-item .btn-primary {
+    color: #fff;
+    float: none;
+}
+.goods-page .compare-item .btn-default {
+    background: transparent none repeat scroll 0 0;
+    border: 1px solid #ededed;
+    color: #a8aeb3;
+    float: none;
+    margin-top: 10px;
+    padding: 6px 13px;
+}
+.goods-page .compare-item .btn-default:hover, .goods-page .compare-item .btn-default:focus, .goods-page .compare-item .btn-default:active {
+    background: #a8aeb3 none repeat scroll 0 0;
+    border: 1px solid #a8aeb3;
+    color: #fff;
+    padding: 6px 13px;
+}

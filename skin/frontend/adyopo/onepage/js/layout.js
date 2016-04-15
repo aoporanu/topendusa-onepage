@@ -252,28 +252,28 @@ var Layout = function () {
         jQuery(".quantity-up").html("<i class='fa fa-angle-up'></i>");
     }
 
-    var Checkout = function () {
-
-        return {
-            init: function () {
-
-                $('#checkout').on('change', '#checkout-content input[name="account"]', function() {
-
-                    var title = '';
-
-                    if ($(this).attr('value') == 'register') {
-                        title = 'Step 2: Account &amp; Billing Details';
-                    } else {
-                        title = 'Step 2: Billing Details';
-                    }
-
-                    $('#payment-address .accordion-toggle').html(title);
-                });
-
-            }
-        };
-
-    }();
+    // var Checkout = function () {
+    //
+    //     return {
+    //         init: function () {
+    //
+    //             $('#checkout').on('change', '#checkout-content input[name="account"]', function() {
+    //
+    //                 var title = '';
+    //
+    //                 if ($(this).attr('value') == 'register') {
+    //                     title = 'Step 2: Account &amp; Billing Details';
+    //                 } else {
+    //                     title = 'Step 2: Billing Details';
+    //                 }
+    //
+    //                 $('#payment-address .accordion-toggle').html(title);
+    //             });
+    //
+    //         }
+    //     };
+    //
+    // }();
 
     return {
         init: function () {
@@ -294,7 +294,6 @@ var Layout = function () {
             handleTheme();
             initImageZoom();
             initTouchspin();
-            Checkout();
-        },
+        }
     };
 }();

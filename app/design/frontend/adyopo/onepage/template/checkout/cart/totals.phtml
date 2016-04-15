@@ -35,12 +35,14 @@
 <?php if ($this->canApplyMsrp()): ?>
     <div class="cart-msrp-totals"><?php echo $this->__('ORDER TOTAL WILL BE DISPLAYED BEFORE YOU SUBMIT THE ORDER'); ?></div>
 <?php else: ?>
-    <ul>
-        <li>
-            <?php echo $this->renderTotals(); ?>
-        </li>
-        <li>
+    <table id="shopping-cart-totals-table">
+        <col />
+        <col width="1" />
+        <tfoot>
             <?php echo $this->renderTotals('footer'); ?>
-        </li>
-    </ul>
+        </tfoot>
+        <tbody>
+            <?php echo $this->renderTotals(); ?>
+        </tbody>
+    </table>
 <?php endif; ?>

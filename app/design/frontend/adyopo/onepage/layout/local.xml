@@ -178,6 +178,12 @@ One page checkout main layout
         <reference name="root">
             <action method="setTemplate"><template>page/onepage.phtml</template></action>
         </reference>
+        <reference name="head">
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/checkout.js</name>
+            </action>
+        </reference>
         <reference name="right">
             <action method="unsetChildren"></action>
             <block type="page/html_wrapper" name="checkout.progress.wrapper" translate="label">
@@ -374,6 +380,13 @@ One page checkout order review block
             </action>
         </reference>
     </catalog_category_default>
+    <!--<catalog_category_view>-->
+        <!--<reference name="root">-->
+            <!--<action name="setTemplate">-->
+                <!--<template>page/onepage.phtml</template>-->
+            <!--</action>-->
+        <!--</reference>-->
+    <!--</catalog_category_view>-->
     <catalog_product_compare_index translate="label">
         <label>Catalog Product Compare List</label>
         <!-- Mage_Catalog -->

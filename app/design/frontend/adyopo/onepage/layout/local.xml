@@ -183,6 +183,14 @@ One page checkout main layout
                 <type>skin_js</type>
                 <name>js/checkout.js</name>
             </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/jquery.uniform.min.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>css/uniform.default.min.css</name>
+            </action>
         </reference>
         <reference name="right">
             <action method="unsetChildren"></action>

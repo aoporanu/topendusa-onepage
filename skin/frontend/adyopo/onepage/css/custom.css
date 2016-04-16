@@ -1068,3 +1068,20 @@ table .product-quantity, table .product-quantity .input-group {
     color: #fff;
     padding: 6px 13px;
 }
+
+.radio-list > label {
+    display: block;
+}
+
+.require {
+    color: #e94d1c;
+}
+
+.checkout-onepage-index .header {
+    margin-bottom: 23px;
+}
+
+.checkout-onepage-index .logo {
+    padding-bottom: 27px;
+    padding-top: 28px;
+}

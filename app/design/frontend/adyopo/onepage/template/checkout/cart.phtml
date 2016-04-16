@@ -93,7 +93,6 @@
                                 </tbody>
                             </table>
                         </form>
-                    </div>
                         <div class="cart-collaterals pull-left">
                             <div class="col2-set">
                                 <div class="col-1">
@@ -107,20 +106,22 @@
                                 </div>
                             </div>
                         </div>
-                    <div class="shopping-total pull-right">
+                        <div class="shopping-total pull-right">
                             <div class="totals">
                                 <?php echo $this->getChildHtml('totals'); ?>
                                 <?php if(!$this->hasError()): ?>
-                                <ul class="checkout-types">
-                                <?php foreach ($this->getMethods('methods') as $method): ?>
-                                      <?php if ($methodHtml = $this->getMethodHtml($method)): ?>
-                                    <li><?php echo $methodHtml; ?></li>
-                                    <?php endif; ?>
-                                <?php endforeach; ?>
-                                </ul>
+                                    <ul class="checkout-types">
+                                        <?php foreach ($this->getMethods('methods') as $method): ?>
+                                            <?php if ($methodHtml = $this->getMethodHtml($method)): ?>
+                                                <li><?php echo $methodHtml; ?></li>
+                                            <?php endif; ?>
+                                        <?php endforeach; ?>
+                                    </ul>
                                 <?php endif; ?>
                             </div>
+                        </div>
                     </div>
+
                 </div>
                 <?php if($this->getContinueShoppingUrl()): ?>
                     <button type="button" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Continue Shopping')) ?>" class="btn btn-default btn-continue" onclick="setLocation('<?php echo Mage::helper('core')->quoteEscape($this->getContinueShoppingUrl()) ?>')"><span><span><?php echo $this->__('Continue Shopping') ?></span></span></button>

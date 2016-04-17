@@ -1,5 +1,5 @@
 /* here you can put your own css to customize and override the theme */
-.checkout-cart-index, .checkout-onepage-index  {
+.checkout-cart-index, .checkout-onepage-index, .customer-account-index  {
 	background: #f9f9f9 none repeat scroll 0 0;
 	font-family: "PT Sans Narrow",sans-serif;
 	margin: 0 0 10px;
@@ -10,15 +10,15 @@
 	background: #FFF none repeat scroll 0 0;
 }
 
-.checkout-cart-index h1, .checkout-onepage-index h1, .checkout-cart-index h2, .checkout-onepage-index h2, .checkout-cart-index h3, .checkout-onepage-index h3, .checkout-cart-index h4, .checkout-onepage-index h4, .checkout-cart-index h5, .checkout-onepage-index h5, .checkout-cart-index h6, .checkout-onepage-index h6 {
+.checkout-cart-index h1, .checkout-onepage-index h1, .customer-account-index h1, .checkout-cart-index h2, .checkout-onepage-index h2, .customer-account-index h2, .checkout-cart-index h3, .checkout-onepage-index h3, .customer-account-index h3, .checkout-cart-index h4, .checkout-onepage-index h4, .customer-account-index h4, .checkout-cart-index h5, .checkout-onepage-index h5, .customer-account-index h5, .checkout-cart-index h6, .checkout-onepage-index h6, .customer-account-index h6 {
     font-family: "PT Sans Narrow",sans-serif;
     margin: 0 0 10px;
     text-transform: uppercase;
 }
-.checkout-cart-index h1, .checkout-onepage-index h1 {
+.checkout-cart-index h1, .checkout-onepage-index h1, .customer-account-index h1 {
     font-size: 23px;
 }
-.checkout-cart-index h2, .checkout-onepage-index h2 {
+.checkout-cart-index h2, .checkout-onepage-index h2, .customer-account-index h2 {
     font-size: 20px;
 }
 .checkout-cart-index, .checkout-onepage-index .content-page h2, .checkout-cart-index, .checkout-onepage-index .content-page h3, .checkout-cart-index, .checkout-onepage-index .content-page h4, .checkout-cart-index, .checkout-onepage-index .content-page h5, .checkout-cart-index, .checkout-onepage-index .content-page h6 {
@@ -386,13 +386,13 @@
     font: 300 13px "Open Sans",sans-serif;
     width: 100%;
 }
-.goods-data th, .checkout-page th {
+.goods-data th, .checkout-page th, .customer-account-index th {
     border-bottom: 1px solid #ecebeb;
     font: 16px "PT Sans Narrow",sans-serif;
     padding-bottom: 8px;
     text-transform: uppercase;
 }
-.goods-data td, .checkout-page td {
+.goods-data td, .checkout-page td, .customer-account-index td {
     border-bottom: 1px solid #ecebeb;
     padding: 20px 20px 20px 0;
     vertical-align: top;
@@ -1077,11 +1077,80 @@ table .product-quantity, table .product-quantity .input-group {
     color: #e94d1c;
 }
 
-.checkout-onepage-index .header {
+.checkout-onepage-index .header, .customer-account-index .header {
     margin-bottom: 23px;
 }
 
 .checkout-onepage-index .logo {
     padding-bottom: 27px;
     padding-top: 28px;
+}
+
+.box-account, .block-cart, .block-reorder {
+    background-color: #FFF;
+    margin-left: 15px;
+}
+
+.customer-account-index .wrapper {
+    background: #f9f9f9 none repeat scroll 0 0;
+}
+
+.customer-account-index table {
+    width: 100%;
+    font: 300 13px "Open Sans",sans-serif;
+}
+
+/* Base styles (regardless of theme) */
+.bs-callout {
+    margin: 20px 0;
+    padding: 15px 30px 15px 15px;
+    border-left: 5px solid #eee;
+}
+
+.bs-callout h4 {
+    margin-top: 0;
+}
+
+.bs-callout p:last-child {
+    margin-bottom: 0;
+}
+
+.bs-callout code,
+.bs-callout .highlight {
+    background-color: #fff;
+}
+
+/* Themes for different contexts */
+.bs-callout-danger {
+    background-color: #fcf2f2;
+    border-color: #dFb5b4;
+}
+
+.bs-callout-warning {
+    background-color: #fefbed;
+    border-color: #f1e7bc;
+}
+
+.bs-callout-info {
+    background-color: #f0f7fd;
+    border-color: #d0e3f0;
+}
+
+.bs-callout-danger h4,
+.bs-callout-danger a.alert-link {
+    color: #B94A48;
+}
+
+.bs-callout-warning h4,
+.bs-callout-warning a.alert-link {
+    color: #C09853;
+}
+
+.bs-callout-info h4,
+.bs-callout-info a.alert-link {
+    color: #3A87AD;
+}
+
+.bs-callout a.alert-link {
+    font-weight: bold;
 }

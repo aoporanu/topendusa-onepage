@@ -30,13 +30,15 @@
         <?php echo $this->getMessagesBlock()->toHtml() ?>
 <!--        --><?php //echo $this->getChildHtml('hello') ?>
         <?php echo $this->getChildHtml('top') ?>
-        <div class="box-account box-info">
-            <div class="box-head">
+        <div class="box-account box-info row margin-bottom-40">
+            <div class="box-head bs-callout bs-callout-info">
                 <h2><?php echo $this->__('Account Information') ?></h2>
             </div>
             <?php /* Extensions placeholder */ ?>
-            <?php echo $this->getChildHtml('customer.account.dashboard.extra') ?>
-            <?php echo $this->getChildHtml('info') ?>
+            <div class="col-md-12 col-sm-12">
+                <?php echo $this->getChildHtml('customer.account.dashboard.extra') ?>
+                <?php echo $this->getChildHtml('info') ?>
+            </div>
         </div>
         <hr />
         <?php echo $this->getChildHtml('address') ?>

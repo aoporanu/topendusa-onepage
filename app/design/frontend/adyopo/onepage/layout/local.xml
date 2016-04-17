@@ -120,6 +120,26 @@
                 </action>
             </reference>
         </reference>
+        <reference name="customer_account_edit">
+            <action method="unsetChild">
+                <name>customer_edit</name>
+            </action>
+            <reference name="root">
+                <action method="setTemplate">
+                    <template>page/onecolumn.phtml</template>
+                </action>
+            </reference>
+        </reference>
+        <reference name="customer_account">
+            <reference name="head">
+                <action method="removeItem">
+                    <type>skin_css</type>
+                    <name>css/widgets.css</name>
+                </action>
+            </reference>
+        </reference>
+        <remove name="right.permanent.callout" />
+        <remove name="left.permanent.callout" />
     </default>
     <!--
 One page checkout main layout
@@ -329,6 +349,15 @@ One page checkout shipping methods block
             <action method="setDontDisplayContainer"><param>1</param></action>
         </block>
     </checkout_onepage_additional>
+
+    <customer_account>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/onepage.phtml</template>
+            </action>
+        </reference>
+    </customer_account>
+
 
 <!--
 One page checkout order review block

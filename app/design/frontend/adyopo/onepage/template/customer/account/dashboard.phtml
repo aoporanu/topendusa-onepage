@@ -35,10 +35,8 @@
                 <h2><?php echo $this->__('Account Information') ?></h2>
             </div>
             <?php /* Extensions placeholder */ ?>
-            <div class="col-md-12 col-sm-12">
                 <?php echo $this->getChildHtml('customer.account.dashboard.extra') ?>
                 <?php echo $this->getChildHtml('info') ?>
-            </div>
         </div>
         <hr />
         <?php echo $this->getChildHtml('address') ?>
@@ -47,3 +45,8 @@
         <hr />
     </div>
 </div>
+<script>
+    jQuery(document).ready(function($) {
+        $('body').addClass('customer-account-index');
+    });
+</script>

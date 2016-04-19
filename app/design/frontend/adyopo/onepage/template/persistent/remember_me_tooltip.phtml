@@ -34,13 +34,10 @@
 <div class="remember-me-popup">
     <div class="remember-me-popup-head">
         <h3><?php echo $this->__("What's this?"); ?></h3>
-        <a href="#" class="remember-me-popup-close" title="<?php echo $this->quoteEscape($this->__('Close')) ?>"><?php echo $this->__('Close') ?></a>
     </div>
-    <div class="remember-me-popup-body">
+    <div class="alert alert-warning alert-dismissible" role="alert">
         <p><?php echo $this->__('Checking &quot;Remember Me&quot; will let you access your shopping cart on this computer when you are logged out'); ?></p>
-        <div class="remember-me-popup-close-button a-right">
-            <a href="#" class="remember-me-popup-close button" title="<?php echo $this->quoteEscape($this->__('Close')) ?>"><span><?php echo $this->__('Close') ?></span></a>
-        </div>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     </div>
 </div>
 <script type="text/javascript">

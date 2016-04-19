@@ -1154,3 +1154,7 @@ table .product-quantity, table .product-quantity .input-group {
 .bs-callout a.alert-link {
     font-weight: bold;
 }
+
+.account-login h2 em {
+    color: #e6400c;
+}

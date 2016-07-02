@@ -28,13 +28,21 @@
 <?php $_order = $this->getOrder() ?>
 <div class="row margin-bottom-40">
     <?php echo $this->getMessagesBlock()->toHtml() ?>
-    <div class="col-md-12 col-sm-12">
-        <h1><?php echo $this->__('Order #%s - %s', $_order->getRealOrderId(), $_order->getStatusLabel()) ?></h1>
-        <?php echo $this->getChildHtml('buttons') ?>
-    </div>
     <?php echo $this->getStatusHistoryRssUrl($_order) ?>
     <div class="col-md-12 col-sm-12">
-
+    <div class="portlet light portlet-fit partial-datatable bordered">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="icon-settings"></i>
+                <span class="caption-subject font-dark sbold uppercase"><?php echo $this->__('Order #%s - %s', $_order->getRealOrderId(), $_order->getStatusLabel()) ?> } <?php echo $this->__('Order Date: %s', $this->formatDate($_order->getCreatedAtStoreDate(), 'long')) ?></span>
+            </div>
+            <div class="actions">
+                <div class="btn-group btn-group-divided">
+                    <?php echo $this->getChildHtml('buttons') ?>
+                </div>
+            </div>
+        </div>
+    </div>
         <dl class="order-info">
             <dt><?php echo $this->__('About This Order:') ?></dt>
             <dd>
@@ -51,25 +59,25 @@
                 <script type="text/javascript">decorateGeneric($('order-info-tabs').select('LI'),['first','last']);</script>
             </dd>
         </dl>
-        <p class="order-date"><?php echo $this->__('Order Date: %s', $this->formatDate($_order->getCreatedAtStoreDate(), 'long')) ?></p>
+        <p class="order-date"></p>
         <?php if (!$_order->getIsVirtual()): ?>
-            <div class="col2-set order-info-box">
-                <div class="col-1">
-                    <div class="box">
-                        <div class="box-title">
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <div class="portlet yellow-crusta box">
+                        <div class="portlet-title">
                             <h2><?php echo $this->__('Shipping Address') ?></h2>
                         </div>
-                        <div class="box-content">
+                        <div class="portlet-body">
                             <address><?php echo $_order->getShippingAddress()->format('html') ?></address>
                         </div>
                     </div>
                 </div>
-                <div class="col-2">
-                    <div class="box">
-                        <div class="box-title">
+                <div class="col-md-6 col-sm-12">
+                    <div class="portlet blue-hoki box">
+                        <div class="portlet-title">
                             <h2><?php echo $this->__('Shipping Method') ?></h2>
                         </div>
-                        <div class="box-content">
+                        <div class="portlet-body">
                             <?php if ($_order->getShippingDescription()): ?>
                                 <?php echo $this->escapeHtml($_order->getShippingDescription()) ?>
                             <?php else: ?>
@@ -80,25 +88,17 @@
                 </div>
             </div>
         <?php endif; ?>
-        <div class="col2-set order-info-box">
-            <div class="col-1">
-                <div class="box">
-                    <div class="box-title">
-                        <h2><?php echo $this->__('Billing Address') ?></h2>
-                    </div>
-                    <div class="box-content">
-                        <address><?php echo $_order->getBillingAddress()->format('html') ?></address>
-                    </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <div class="portlet green-meadow box">
+                    <div class="portlet-title"><h2><?php echo $this->__('Billing Address') ?></h2></div>
+                    <div class="portlet-body"><address><?php echo $_order->getBillingAddress()->format('html') ?></address></div>
                 </div>
             </div>
-            <div class="col-2">
-                <div class="box box-payment">
-                    <div class="box-title">
-                        <h2><?php echo $this->__('Payment Method') ?></h2>
-                    </div>
-                    <div class="box-content">
-                        <?php echo $this->getPaymentInfoHtml() ?>
-                    </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="portlet red-sunglo box">
+                    <div class="portlet-title"><h2><?php echo $this->__('Payment Method') ?></h2></div>
+                    <div class="portlet-body"><?php echo $this->getPaymentInfoHtml() ?></div>
                 </div>
             </div>
         </div>

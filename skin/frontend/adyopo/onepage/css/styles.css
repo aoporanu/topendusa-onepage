@@ -2083,6 +2083,10 @@ div > .product-item {
     padding-bottom: 12px;
 }
 
-.validation-advice {
-    color: #
+.label {
+    color: #333 !important;
+}
+
+.block-subtitle {
+    padding-top: 10px;
 }

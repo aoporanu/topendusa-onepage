@@ -24,19 +24,16 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<?php /* @var $this Mage_Sales_Block_Recurring_Profiles */ ?>
-<div class="col-md-9 col-sm-12">
-    <div class="portlet">
-        <div class="portlet-title">
-            <div class="caption"><?php echo $this->__('Recurring Profiles') ?></div>
-        </div>
-        <div class="portlet-body">
-            <?php echo $this->getMessagesBlock()->toHtml() ?>
-            <?php echo $this->getChildHtml('grid')?>
 
-            <div class="buttons-set">
-                <p class="back-link"><a href="<?php echo $this->escapeHtml($this->getBackUrl()) ?>"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p>
-            </div>
-        </div>
-    </div>
-</div>
+<?php $_wishlistItem = $this->getWishlistItem(); ?>
+<?php $_wishlistSubmitUrl = $this->helper('wishlist')->getUpdateUrl($_wishlistItem); ?>
+<ul class="add-to-links">
+<?php if ($this->helper('wishlist')->isAllow()) : ?>
+    <li><a href="<?php echo $_wishlistSubmitUrl ?>" onclick="productAddToCartForm.submitLight(this, this.href); return false;" class="link-compare"><?php echo $this->__('Update Wishlist') ?></a></li>
+<?php endif; ?>
+<?php $_product = $this->getProduct(); ?>
+<?php $_compareUrl = $this->helper('catalog/product_compare')->getAddUrl($_product); ?>
+<?php if ($_compareUrl) : ?>
+    <li><span class="separator">|</span> <a href="<?php echo $_compareUrl ?>" class="link-compare"><?php echo $this->__('Add to Compare') ?></a></li>
+<?php endif; ?>
+</ul>

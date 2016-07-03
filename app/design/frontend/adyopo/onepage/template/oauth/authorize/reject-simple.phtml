@@ -23,20 +23,25 @@
  * @copyright   Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
-?>
-<?php /* @var $this Mage_Sales_Block_Recurring_Profiles */ ?>
-<div class="col-md-9 col-sm-12">
-    <div class="portlet">
-        <div class="portlet-title">
-            <div class="caption"><?php echo $this->__('Recurring Profiles') ?></div>
-        </div>
-        <div class="portlet-body">
-            <?php echo $this->getMessagesBlock()->toHtml() ?>
-            <?php echo $this->getChildHtml('grid')?>
 
-            <div class="buttons-set">
-                <p class="back-link"><a href="<?php echo $this->escapeHtml($this->getBackUrl()) ?>"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p>
+/**
+ * Authorize rejection simple template
+ *
+ * @var $this Mage_Oauth_Block_AuthorizeBaseAbstract
+ */
+?>
+<div class="login-container">
+    <div class="login-box">
+        <div class="page-title">
+            <h1><?php echo $this->__('Rejection Of Authorization') ?></h1>
+        </div>
+        <div class="form-box">
+            <div id="messages">
+                <?php echo $this->getMessagesBlock()->toHtml() ?>
             </div>
+            <button type="submit" class="button" onclick="window.close();" title="<?php echo $this->__('Close') ?>">
+                <span><span><?php echo $this->__('Close') ?></span></span>
+            </button>
         </div>
     </div>
 </div>

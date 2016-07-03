@@ -24,7 +24,7 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<div class="sidebar col-md-3 col-sm-3">
+<div class="col-md-3 col-sm-12">
     <div class="block-content">
         <ul class="list-group margin-bottom-25 sidebar-menu">
             <?php $_links = $this->getLinks(); ?>
@@ -35,7 +35,7 @@
                 <?php if ($this->isActive($_link)): ?>
                     <li class="current<?php echo ($_last ? ' last' : '') ?> list-group-item clearfix"><a href="<?php echo $_link->getUrl() ?>"><strong><?php echo $_link->getLabel() ?></strong></a></li>
                 <?php else: ?>
-                    <li class="list-group-item clearfix<?php echo ($_last ? ' last' : '') ?>><a href="<?php echo $_link->getUrl() ?>"><?php echo $_link->getLabel() ?></a></li>
+                    <li class="list-group-item clearfix<?php echo ($_last ? ' last' : '') ?>"><a href="<?php echo $_link->getUrl() ?>"><?php echo $_link->getLabel() ?></a></li>
                 <?php endif; ?>
             <?php endforeach; ?>
         </ul>

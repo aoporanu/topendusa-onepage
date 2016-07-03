@@ -24,19 +24,15 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<?php /* @var $this Mage_Sales_Block_Recurring_Profiles */ ?>
-<div class="col-md-9 col-sm-12">
-    <div class="portlet">
-        <div class="portlet-title">
-            <div class="caption"><?php echo $this->__('Recurring Profiles') ?></div>
-        </div>
-        <div class="portlet-body">
-            <?php echo $this->getMessagesBlock()->toHtml() ?>
-            <?php echo $this->getChildHtml('grid')?>
-
-            <div class="buttons-set">
-                <p class="back-link"><a href="<?php echo $this->escapeHtml($this->getBackUrl()) ?>"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p>
-            </div>
-        </div>
-    </div>
+<?php
+/**
+ * Template for displaying wishlist item price at rss feeds pages
+ *
+ * @var $this Mage_Catalog_Block_Product_Price
+ */
+?>
+<div class="price-box map-info">
+    <?php if ($this->helper('catalog')->canApplyMsrp($this->getProduct())): ?>
+        <a href="<?php echo $this->getProduct()->getProductUrl() ?>"><?php echo $this->__('Click for price'); ?></a>
+    <?php endif; ?>
 </div>

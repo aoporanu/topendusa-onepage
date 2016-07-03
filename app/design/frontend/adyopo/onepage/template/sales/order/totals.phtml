@@ -32,21 +32,21 @@
     <?php if ($_total->getBlockName()): ?>
         <?php echo $this->getChildHtml($_total->getBlockName(), false); ?>
     <?php else:?>
-    <tr class="<?php echo $_code?>">
-        <td <?php echo $this->getLabelProperties()?>>
+    <div class="row static-info align-reverse <?php echo $_code?>">
+        <div class="col-md-8 name" <?php echo $this->getLabelProperties()?>>
             <?php if ($_total->getStrong()):?>
             <strong><?php echo $this->escapeHtml($_total->getLabel());?></strong>
             <?php else:?>
             <?php echo $this->escapeHtml($_total->getLabel());?>
             <?php endif?>
-        </td>
-        <td <?php echo $this->getValueProperties()?>>
+        </div>
+        <div class="col-md-3 value" <?php echo $this->getValueProperties()?>>
             <?php if ($_total->getStrong()):?>
             <strong><?php echo $this->formatValue($_total) ?></strong>
             <?php else:?>
             <?php echo $this->formatValue($_total) ?>
             <?php endif?>
-        </td>
-    </tr>
+        </div>
+    </div>
     <?php endif?>
 <?php endforeach?>

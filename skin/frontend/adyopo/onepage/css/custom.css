@@ -1158,3 +1158,13 @@ table .product-quantity, table .product-quantity .input-group {
 .account-login h2 em {
     color: #e6400c;
 }
+
+.page-404 {
+    padding-bottom: 125px;
+    padding-top: 60px;
+    text-align: center;
+}
+
+.skip-links {
+    line-height:60px;
+}

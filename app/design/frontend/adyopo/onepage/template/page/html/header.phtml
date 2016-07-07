@@ -44,7 +44,7 @@
 
                 <!-- Skip Links -->
 
-                <div class="skip-links">
+                <div class="skip-links pull-left">
                     <a href="#header-nav" class="skip-link skip-nav">
                         <span class="icon"></span>
                         <span class="label"><?php echo $this->__('Menu'); ?></span>
@@ -55,15 +55,15 @@
                         <span class="label"><?php echo $this->__('Search'); ?></span>
                     </a>
 
-                    <div class="account-cart-wrapper">
-                        <a href="<?php echo $this->helper('customer')->getAccountUrl(); ?>" data-target-element="#header-account" class="skip-link skip-account">
+                    <div class="account-cart-wrapper col-md-4 pull-left">
+                        <a href="<?php echo $this->helper('customer')->getAccountUrl(); ?>" data-target-element="#header-account" class="skip-link skip-account col-md-6">
                             <span class="icon"></span>
                             <span class="label"><?php echo $this->__('Account'); ?></span>
                         </a>
 
                         <!-- Cart -->
 
-                        <div class="header-minicart">
+                        <div class="header-minicart col-md-6">
                             <?php echo $this->getChildHtml('minicart_head'); ?>
                         </div>
                     </div>

@@ -493,8 +493,7 @@ a:hover {
 .header-navigation {
     float: right;
     list-style: none;
-    padding: 19px 0 0;
-    margin: -15px 0 0;
+    padding: 25px 0 0;
     font: 400 18px "PT Sans Narrow", Arial, sans-serif;
     text-transform: uppercase;
 }
@@ -2089,4 +2088,13 @@ div > .product-item {
 
 .block-subtitle {
     padding-top: 10px;
+}
+
+.skip-cart {
+    background-color: transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
 }
